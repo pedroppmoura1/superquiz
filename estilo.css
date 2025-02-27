@@ -64,6 +64,10 @@ h1 {
 
 }
 
+.Progresso {
+    position: absolute;
+    top: 80%;
+}
 
 button {
     width: 500px;
