@@ -1,17 +1,47 @@
+<!DOCTYPE html>
 <body>
     
 
-    <h1 id = "Pergunta"> Pergunta </h1>
-    <button class = 'button' id = 'Alternativa A' width: 300%> Resposta 1 </button><br>
-    <button class = 'button' id = 'Alternativa B'> Resposta 2</button><br>
-    <button class = 'button' id = 'Alternativa C'> Resposta 3</button><br>
-    <button class = 'button' id = 'Alternativa D'> Resposta 4</button><br>
+    
+
+    <div class="Multipla-Escolha">
+        <h1 id = "Pergunta"> Pergunta </h1>
+        <button id = 'Alternativa A' > Resposta 1 </button><br>
+        <button id = 'Alternativa B'> Resposta 2</button><br>
+        <button id = 'Alternativa C'> Resposta 3</button><br>
+        <button id = 'Alternativa D'> Resposta 4</button><br>
+        <button id = 'Alternativa E'> Resposta 5</button><br>
+        <h1 id = "Explicacao"> </h1>
+        
+    </div>
+    
+    <div class="Jogo-2">
+        <p> Qual palavra em inglês pode ter as seguintes traduções? </p>
+        <p id = "possiveis traducoes et" class = "jogo-2-possiveis-traducoes"> Placeholder </p>
+        <input id = "textbox_jogo_2" type="text" placeholder="Tradução" autocomplete="off">
+        <p id = "dica" > Dica </p>
+    </div>
+
+    <p class="streak-paragraph" id="streak-paragraph">
+        Streak: 0
+    </p>
+    <p class="acertou-errou" id = "acertou-errou">
+        Acertou!
+    </p>
+    
+    
+    
 
     <link rel="stylesheet" href="./estilo.css">
 
+    
+
+    <p id = "Progresso">
+        Palavras aprendidas = 0/Nan
+    </p>
 </body>
 
 <style src = './estilo.css'></style>
 
-<script type = 'text/javascript'src ='./funcoes.js'></script>
+<script type = 'text/javascript'src ='./jogo_memorizar_traducoes.js'></script>
  

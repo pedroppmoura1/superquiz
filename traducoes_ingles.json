@@ -1,0 +1,41 @@
+{
+    "Pretty": [
+        "Bonito",
+        "Lindo",
+        "Bastante"
+    ],
+    "Door": [
+        "Porta",
+        "Entrada"
+    ],
+    "Medicine": [
+        "Remédio",
+        "Medicina",
+        "Medicamento"
+    ],
+    "Sign": [
+        "Sinal",
+        "Placa",
+        "Signo"
+    ],
+    "Contrary": [
+        "Contrário",
+        "Contra",
+        "Oposto"
+    ],
+    "Canvas": [
+        "Tela",
+        "Lona",
+        "Quadro"
+    ],
+    "Grass": [
+        "Grama",
+        "Erva",
+        "Capim"
+    ],
+    "Ape": [
+        "Primata",
+        "Símio",
+        "Macaco"
+    ]
+}
