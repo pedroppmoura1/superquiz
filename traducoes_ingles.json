@@ -18,16 +18,6 @@
         "Placa",
         "Signo"
     ],
-    "Contrary": [
-        "Contrário",
-        "Contra",
-        "Oposto"
-    ],
-    "Canvas": [
-        "Tela",
-        "Lona",
-        "Quadro"
-    ],
     "Grass": [
         "Grama",
         "Erva",
@@ -37,5 +27,23 @@
         "Primata",
         "Símio",
         "Macaco"
+    ],
+    "Gentle": [
+        "Suave",
+        "Gentil",
+        "Delicado"
+    ],
+    "Care": [
+        "Cuidado",
+        "Atenção",
+        "Assistência"
+    ],
+    "Clothes": [
+        "Roupa",
+        "Vestuário"
+    ],
+    "Mouse": [
+        "Rato",
+        "Camundongo"
     ]
 }
