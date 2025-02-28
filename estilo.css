@@ -51,6 +51,7 @@ h1 {
     padding-bottom: 8px;
     width: clamp(100px,40%,180px);
     text-align: center;
+    margin-top: 100px;
     
 }
 
