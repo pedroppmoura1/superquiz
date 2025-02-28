@@ -10,8 +10,10 @@ var dados_traducoes;
 var num_streak = 0;
 var numero_de_palavras_aprendidas = 0;
 var contar_rodadas = 0;
-var nome_jogo_atual = "Multipla-Escolha"
+var nome_jogo_atual = "Jogo-2"
 
+var total_de_pontos = 0
+var pontuacao_total_inicial = 0
 
 
 // Toda palavra começa com 200 pontos, que é proporcional a possibilidade da palavra aparecer no sistema aleatório;
@@ -34,7 +36,7 @@ function extrair_dados_json(data){
             lista_traducoes.push(data[key][traducao]);
         };
     };
-    //definir_palavras_jogo_2(data);
+    pontuacao_total_inicial = palavras_em_italiano.length*pontuacao_inicial;
     iniciar_tela();
     construir_jogo();
     atualizar_label_palavras_aprendidas();
@@ -65,13 +67,13 @@ function iniciar_tela(){
     
 //Essa função encontra uma palavra aleatória levando em consideração do sistema de pesos;
 function selecionar_palavra_pontuacao(){
-    var total_de_pontos = 0
-    for(const key in sistema_de_pontos){
-        total_de_pontos += sistema_de_pontos[key]
-    }
-
+    
+    total_de_pontos = calcular_total_de_pontos();
+  
+    
     valor_aleatorio = Math.floor(Math.random()*total_de_pontos) + 1
     
+
     for(const key in sistema_de_pontos){
         if (valor_aleatorio >= sistema_de_pontos[key]){
             valor_aleatorio -= sistema_de_pontos[key]
@@ -82,6 +84,14 @@ function selecionar_palavra_pontuacao(){
     }
 }
 
+function calcular_total_de_pontos(){
+    total_de_pontos = 0;
+    for(const key in sistema_de_pontos){
+        total_de_pontos += sistema_de_pontos[key]
+    }
+    return total_de_pontos;
+
+}
 // Coloca na tela as informações da questão;
 function construir_jogo(){
     if(nome_jogo_atual === "Multipla-Escolha"){
@@ -99,15 +109,20 @@ function construir_jogo(){
     
 // Garante que os pontos nunca sejam negativos (o que quebraria o código)
 function adicionar_ou_retirar_pontos(key,num){
-    sistema_de_pontos[key] = Math.max(0,sistema_de_pontos[key]+num)
+    
+    sistema_de_pontos[key] += num
     if (sistema_de_pontos[key] === 0){
         numero_de_palavras_aprendidas ++
         atualizar_label_palavras_aprendidas()
     }
+    total_de_pontos = calcular_total_de_pontos();
+    document.getElementById('barra_progresso_palavras_aprendidas').value = String(Math.max(0,100*(1-total_de_pontos/pontuacao_total_inicial)))
 }
 
+
+
 function atualizar_label_palavras_aprendidas(){
-    document.getElementById('Progresso').innerHTML = "Palavras aprendidas = " + String(numero_de_palavras_aprendidas) + "/" + String(palavras_em_italiano.length)
+    document.getElementById('texto-progresso').innerHTML = "Palavras aprendidas = " + String(numero_de_palavras_aprendidas) + "/" + String(palavras_em_italiano.length)
 }
 
 function trocar_jogo(){
@@ -129,6 +144,13 @@ function trocar_jogo(){
 }
 
 function atualizar_streak(num_streak){
+    
+    if (document.getElementsByClassName("acertou-errou")[0].style.display == ''){
+        document.getElementsByClassName("acertou-errou")[0].style.display = "Flex"
+        }
+    
+
+        
     if (num_streak == 0){
         document.getElementById("acertou-errou").innerText = "Errou!"
         document.getElementById("acertou-errou").style.backgroundColor = "Red"
@@ -196,6 +218,7 @@ function verificar_resposta_multipla_escolha(i){
     var resultado = dados_traducoes[palavra_selecionada].includes(alternativas[i])
     if (resultado){
         adicionar_ou_retirar_pontos(palavra_selecionada,deducao_de_pontos_por_acerto)
+        document.getElementsByClassName("explicacao")[0].style.display  = 'block'
         document.getElementById("Explicacao").innerHTML = palavra_selecionada + ": " + possiveis_traducoes
         
         num_streak ++
@@ -228,7 +251,7 @@ function definir_palavras_jogo_2(dados_traducoes){
     document.getElementById("possiveis traducoes et").innerText = possiveis_traducoes
     
     
-    document.getElementById("dica").innerText = gerar_dica(palavra_selecionada);
+    document.getElementById("dica").innerText = "Dica: "+ gerar_dica(palavra_selecionada);
 
     
 }

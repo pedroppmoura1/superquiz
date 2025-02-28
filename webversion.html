@@ -1,33 +1,39 @@
 <!DOCTYPE html>
-<body>
+<body style = "background-image: url('./imagem de fundo.png');">
     
-
+    <div>
+        <progress id = 'barra_progresso_palavras_aprendidas' value = '0' max = '100'>  </progress>
+        <p class = 'texto-progresso' id = 'texto-progresso'> Palavras aprendidas = 0/Nan </p>
+    </div>
     
 
     <div class="Multipla-Escolha">
-        <h1 id = "Pergunta"> Pergunta </h1>
+        <p id = "Pergunta" class = "Multipla-Escolha-Pergunta"> Pergunta </p>
         <button id = 'Alternativa A' > Resposta 1 </button><br>
         <button id = 'Alternativa B'> Resposta 2</button><br>
         <button id = 'Alternativa C'> Resposta 3</button><br>
         <button id = 'Alternativa D'> Resposta 4</button><br>
         <button id = 'Alternativa E'> Resposta 5</button><br>
-        <h1 id = "Explicacao"> </h1>
+        <h1 id = "Explicacao" class = 'explicacao'> </h1>
         
     </div>
     
     <div class="Jogo-2">
-        <p> Qual palavra em inglês pode ter as seguintes traduções? </p>
+        <p class = "Multipla-Escolha-Pergunta"> Qual palavra em inglês pode ter as seguintes traduções? </p>
         <p id = "possiveis traducoes et" class = "jogo-2-possiveis-traducoes"> Placeholder </p>
-        <input id = "textbox_jogo_2" type="text" placeholder="Tradução" autocomplete="off">
-        <p id = "dica" > Dica </p>
+        <input id = "textbox_jogo_2" class = 'textbox-jogo-2' type="text" placeholder="Tradução" autocomplete="off">
+        <p id = "dica" class = 'dica-jogo-2'> Dica </p>
     </div>
 
-    <p class="streak-paragraph" id="streak-paragraph">
-        Streak: 0
-    </p>
-    <p class="acertou-errou" id = "acertou-errou">
-        Acertou!
-    </p>
+    <div class ="streak">
+        <p class="streak-paragraph" id="streak-paragraph">
+            Streak: 0
+        </p>
+        <p class="acertou-errou" id = "acertou-errou">
+            Acertou!
+        </p>
+    </div>
+    
     
     
     
@@ -36,9 +42,8 @@
 
     
 
-    <p id = "Progresso" class = "Progresso">
-        Palavras aprendidas = 0/Nan
-    </p>
+    
+    
 </body>
 
 <style src = './estilo.css'></style>
