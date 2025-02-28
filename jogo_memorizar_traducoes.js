@@ -10,7 +10,7 @@ var dados_traducoes;
 var num_streak = 0;
 var numero_de_palavras_aprendidas = 0;
 var contar_rodadas = 0;
-var nome_jogo_atual = "Jogo-2"
+var nome_jogo_atual = "Multipla-Escolha"
 
 var total_de_pontos = 0
 var pontuacao_total_inicial = 0
